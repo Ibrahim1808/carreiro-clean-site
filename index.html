@@ -64,7 +64,7 @@
 
   <section class="contact container">
     <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
+    <form action="https://formspree.io/f/xgvybvbp" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your message" required></textarea>
@@ -117,12 +117,12 @@
       const type = document.getElementById("cleanType").value;
 
       let base = 50;
-      base += bedrooms * 15;
-      base += bathrooms * 10;
-      if (kitchen) base += 20;
+      base += bedrooms * 20;
+      base += bathrooms * 20;
+      if (kitchen) base += 30;
       if (livingroom) base += 15;
 
-      if (type === "deep") base *= 1.4;
+      if (type === "deep") base *= 1.5;
       if (type === "move") base *= 1.7;
 
       document.getElementById("price").textContent = base.toFixed(2);
