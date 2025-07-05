@@ -1,6 +1,3 @@
-index.html
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +5,8 @@ index.html
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carreiro Clean Services</title>
   <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Professional house cleaning services available Monday to Friday, 9:00 AM to 6:00 PM. Reliable, spotless, and affordable.">
+  <meta name="description" content="Professional house cleaning services available Monday to Friday, 7:00 AM to 4:00 PM. Reliable, spotless, and affordable.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-ZOc3yc9i3+Z6rXv0SlFPkVOGt0M16CtY36ImrzfFh+2+j2n+2zT8XurOJ7ZfvbcHtZfZw2sldQWmvDpF4XzkWA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 </head>
 <body>
   <!-- BOTÃO DE TRADUÇÃO -->
@@ -18,7 +14,7 @@ index.html
 
   <header>
     <div class="container">
-        <img src="C:\Users\ibrah\.vscode\Carreiro-clean\assets\logo.png" alt="Carreiro Clean Logo" style="width: 150px;"/>
+      <img src="assets/logo.png" alt="Carreiro Clean Logo" style="width: 150px;"/>
       <h1>Carreiro Clean Services</h1>
       <p>Spotless homes, happy hearts.</p>
     </div>
@@ -26,16 +22,44 @@ index.html
 
   <section class="about container">
     <h2>About Us</h2>
-    <p>We provide professional, affordable, and reliable house cleaning services from Monday to Friday, 9:00 AM to 6:00 PM. Choose from regular, deep, or move-in/move-out cleaning options tailored to your needs.</p>
+    <p>We provide professional, affordable, and reliable house cleaning services from Monday to Friday, 7:00 AM to 4:00 PM. Choose from regular, deep, or move-in/move-out cleaning options tailored to your needs.</p>
   </section>
 
   <section class="services container">
     <h2>Our Services</h2>
     <ul>
-     <li><i class="fas fa-home"></i> Regular House Cleaning</li>
-    <li><i class="fas fa-broom"></i> Deep Cleaning</li>
-    <li><i class="fas fa-truck-moving"></i> Move-In / Move-Out Cleaning</li>
+      <li><i class="fas fa-home"></i> Regular House Cleaning</li>
+      <li><i class="fas fa-broom"></i> Deep Cleaning</li>
+      <li><i class="fas fa-truck-moving"></i> Move-In / Move-Out Cleaning</li>
     </ul>
+  </section>
+
+  <section class="quote-section container">
+    <h2>Get a Free Estimate</h2>
+    <form id="quoteForm">
+      <label>Bedrooms:
+        <input type="number" id="bedrooms" min="1" max="10" required>
+      </label>
+
+      <label>Bathrooms:
+        <input type="number" id="bathrooms" min="1" max="5" required>
+      </label>
+
+      <label><input type="checkbox" id="kitchen"> Include Kitchen</label>
+      <label><input type="checkbox" id="livingroom"> Include Living Room</label>
+
+      <label>Type of Cleaning:
+        <select id="cleanType">
+          <option value="regular">Regular Cleaning</option>
+          <option value="deep">Deep Cleaning</option>
+          <option value="move">Move In / Move Out</option>
+        </select>
+      </label>
+
+      <p><strong>Estimated Price: $<span id="price">0.00</span></strong></p>
+
+      <button type="button" onclick="goToBooking()">Make Appointment</button>
+    </form>
   </section>
 
   <section class="contact container">
@@ -55,22 +79,17 @@ index.html
   </section>
 
   <footer>
-    <footer>
-  <div class="container">
-    <p>&copy; 2025 Carreiro Clean Services – All rights reserved.</p>
-    
-    <div class="social-icons">
-      <a href="https://wa.me/12677267511" target="_blank" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      
-      <a href="carreirosilva18@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
+    <div class="container">
+      <p>&copy; 2025 Carreiro Clean Services – All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://wa.me/12677267511" target="_blank" title="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:carreirosilva18@gmail.com" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
-
   </footer>
 
   <!-- SCRIPT DO GOOGLE TRANSLATE -->
@@ -84,5 +103,35 @@ index.html
     }
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- SCRIPT DE ESTIMATIVA -->
+  <script>
+    const form = document.getElementById("quoteForm");
+    form.addEventListener("input", updatePrice);
+
+    function updatePrice() {
+      const bedrooms = parseInt(document.getElementById("bedrooms").value) || 0;
+      const bathrooms = parseInt(document.getElementById("bathrooms").value) || 0;
+      const kitchen = document.getElementById("kitchen").checked;
+      const livingroom = document.getElementById("livingroom").checked;
+      const type = document.getElementById("cleanType").value;
+
+      let base = 50;
+      base += bedrooms * 15;
+      base += bathrooms * 10;
+      if (kitchen) base += 20;
+      if (livingroom) base += 15;
+
+      if (type === "deep") base *= 1.4;
+      if (type === "move") base *= 1.7;
+
+      document.getElementById("price").textContent = base.toFixed(2);
+    }
+
+    function goToBooking() {
+      const price = document.getElementById("price").textContent;
+      window.location.href = `https://calendly.com/ibrahimsilvaoliveira122432/30min?estimated_price=${price}`;
+    }
+  </script>
 </body>
 </html>
