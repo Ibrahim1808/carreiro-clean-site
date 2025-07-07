@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  background: linear-gradient(to right, #00a86b, #007e56), url('"C:\Users\ibrah\.vscode\Carreiro-clean\assets\background.jpg.jpg"') no-repeat center center;
+  background: linear-gradient(to right, #1a8eec, #1a8eec), url('"C:\Users\ibrah\.vscode\Carreiro-clean\assets\background.jpg.jpg"') no-repeat center center;
   background-size: cover;
   color: white;
   padding: 60px 20px;
@@ -32,10 +32,10 @@ h1 {
 }
 
 h2 {
-  color: #007e56;
+  color: #1a8eec;
   margin-top: 40px;
   font-size: 2rem;
-  border-left: 5px solid #00d9a5;
+  border-left: 5px solid #1a8eec;
   padding-left: 10px;
   animation: fadeInUp 1s ease-out;
 }
@@ -83,7 +83,7 @@ form button {
 }
 
 form button:hover {
-  background: linear-gradient(135deg, #00a86b, #007e56);
+  background: linear-gradient(135deg, #1a8eec, #1a8eec);
 }
 
 footer {
@@ -106,7 +106,7 @@ section {
 }
 
 .services ul li i {
-  color: #00a86b;
+  color: #1a8eec;
   margin-right: 10px;
   font-size: 1.3rem;
 }
@@ -123,7 +123,7 @@ section {
 }
 
 .social-icons a:hover {
-  color: #00ffae;
+  color: #1a8eec;
   transform: scale(1.2);
 }
 
@@ -142,7 +142,7 @@ section {
 .quote-section p {
   margin-top: 20px;
   font-size: 1.4rem;
-  color: #007e56;
+  color: #1a8eec;
   font-weight: bold;
 }
 
@@ -223,9 +223,9 @@ section {
 
 .gallery-section h2 {
   font-size: 2.2rem;
-  color: #007e56;
+  color: #1a8eec;
   margin-bottom: 30px;
-  border-left: 6px solid #00d9a5;
+  border-left: 6px solid #1a8eec;
   padding-left: 12px;
   text-align: left;
   max-width: 1000px;
