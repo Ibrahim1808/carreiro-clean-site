@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  background: linear-gradient(to right, #00a86b, #007e56), url('assets/background.jpg') no-repeat center center;
+  background: linear-gradient(to right, #00a86b, #007e56), url('"C:\Users\ibrah\.vscode\Carreiro-clean\assets\background.jpg.jpg"') no-repeat center center;
   background-size: cover;
   color: white;
   padding: 60px 20px;
@@ -210,4 +210,57 @@ section {
   footer {
     padding: 30px 10px;
   }
+}
+/* BEFORE & AFTER GALLERY */
+.gallery-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #e9f7f3;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+.gallery-section h2 {
+  font-size: 2.2rem;
+  color: #007e56;
+  margin-bottom: 30px;
+  border-left: 6px solid #00d9a5;
+  padding-left: 12px;
+  text-align: left;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-pair,
+.gallery-single {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.gallery-pair:hover,
+.gallery-single:hover {
+  transform: scale(1.03);
+}
+
+.gallery-pair img,
+.gallery-single img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
